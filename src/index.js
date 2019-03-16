@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./App.css";
-import TodoList from "./TodoList";
+import TodoForm from "./TodoForm";
 
 var destination = document.querySelector("#container");
 
 ReactDOM.render(
     <div>
-        <TodoList/>
+        <TodoForm/>
     </div>,
     destination
 );
