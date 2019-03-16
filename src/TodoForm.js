@@ -11,18 +11,20 @@ class TodoForm extends Component {
         this.deleteItem = this.deleteItem.bind(this);
 	}
 	addItem(e) {
-		if (this._inputElement.value !== "") {
+        var d = new Date()
+        if (this._inputElement.value !== "") {
 			var newItem = {
 				text: this._inputElement.value,
-				key: Date.now()
+                key: Date.now(),
+                time: d.getHours() + ":" + d.getMinutes()
 			};
 			this.setState(prevState => {
 				return {
 					items: prevState.items.concat(newItem)
 				};
 			});
-			this._inputElement.value = "";
-		}
+            this._inputElement.value = "";
+        }
 		e.preventDefault();
     }
     deleteItem(key) {
@@ -38,6 +40,7 @@ class TodoForm extends Component {
 		return (
 			<div className="todoListMain">
 				<div className="header">
+                    <h1 className="header-text">My Todo List</h1>
 					<form onSubmit={this.addItem}>
 						<input
 							placeholder="Enter New Task"

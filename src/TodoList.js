@@ -10,7 +10,7 @@ class TodoList extends Component {
         this.props.delete(key);
     }
     createTasks(item) {
-        return <li onClick={() => this.delete(item.key)} key={item.key}>{item.text}</li>
+        return <li onClick={() => this.delete(item.key)} key={item.key}>{item.text} [{item.time}]</li>
     }
     render() {
         var todoEntries = this.props.items;
